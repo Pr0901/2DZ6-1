@@ -1,8 +1,9 @@
-package Page;
+package page;
 
-import Data.DataHelper;
+import data.DataHelper;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.time.Duration;
 
@@ -19,21 +20,19 @@ public class CardTransfersPage {
     private SelenideElement codeField = $x("//h1[contains(@class, 'heading heading_size_xl heading_theme_alfa-on-white')]");
 
     public CardTransfersPage() {
+
         codeField.shouldBe(visible);
     }
 
-    public void transferBetweenCards(String amount, DataHelper.CardInfo cardInfo) {
 
+    public void transferBetweenCards(String amount, DataHelper.CardInfo cardInfo) {
         amountLine.setValue(amount);
         cardFromLine.setValue(cardInfo.getCardNumber());
         continueButton.click();
     }
 
-    public void invalidTransferBetweenCards(String amount, DataHelper.CardInfo cardInfo, String expectedText) {
 
-        amountLine.setValue(amount);
-        cardFromLine.setValue(cardInfo.getCardNumber());
-        continueButton.click();
+    public void errorMessage(String expectedText) {
         errorMessage.shouldHave(Condition.exactText(expectedText), Duration.ofSeconds(15));
     }
 }

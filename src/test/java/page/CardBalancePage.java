@@ -1,6 +1,5 @@
-package Page;
+package page;
 
-import Data.DataHelper;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.val;
@@ -8,7 +7,6 @@ import lombok.val;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-
 
 
 public class CardBalancePage {
