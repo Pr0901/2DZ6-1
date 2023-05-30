@@ -18,6 +18,7 @@ public class CardTransfersPage {
     private SelenideElement continueButton = $("[data-test-id='action-transfer']");
     private SelenideElement errorMessage = $("[data-test-id='error-notification'] .notification__content");
     private SelenideElement codeField = $x("//h1[contains(@class, 'heading heading_size_xl heading_theme_alfa-on-white')]");
+    private SelenideElement back = $("[data-test-id='action-cancel'] .button__content");
 
     public CardTransfersPage() {
 
@@ -34,5 +35,6 @@ public class CardTransfersPage {
 
     public void errorMessage(String expectedText) {
         errorMessage.shouldHave(Condition.exactText(expectedText), Duration.ofSeconds(15));
+        back.click();
     }
 }

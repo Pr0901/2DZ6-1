@@ -38,13 +38,13 @@ public class CardBalancePage {
         return Integer.parseInt(value);
     }
 
-    public CardTransfersPage transferFromSecondToFirst() {
+    public static CardTransfersPage transferFromSecondToFirst() {
 
         $("[data-test-id='92df3f1c-a033-48e6-8390-206f6b1f56c0'] .button").click();
         return new CardTransfersPage();
     }
 
-    public CardTransfersPage transferFromFirstToSecond() {
+    public static CardTransfersPage transferFromFirstToSecond() {
 
         $("[data-test-id='0f3f5c2a-249e-4c3d-8287-09f7a039391d'] .button").click();
         return new CardTransfersPage();
